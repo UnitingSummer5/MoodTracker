@@ -14,7 +14,6 @@ function App() {
   const [mood, setMood] = useState<string>('');
   const [dailyLog, setDailyLog] = useState<string>('');
   const [moodData, setMoodData] = useState<MoodData>({});
-  const [animate, setAnimate] = useState<boolean>(false);
 
   useEffect(() => {
     const storedData = localStorage.getItem('moodData');
@@ -29,7 +28,6 @@ function App() {
       const dataForDate = moodData[dateKey] || { mood: '', dailyLog: '' };
       setMood(dataForDate.mood);
       setDailyLog(dataForDate.dailyLog);
-      setAnimate(true);
     }
   }, [selectedDate, moodData]);
 
@@ -66,7 +64,7 @@ function App() {
       <div className='w-full max-w-md'>
         <CalendarComponent selectedDate={selectedDate} onDateChange={handleDateChange} moodData={moodData} />
         <MoodSelector selectedMood={mood} onMoodChange={handleMoodChange} />
-        <DailyLogForm key={selectedDate?.toDateString()} dailyLog={dailyLog} onLogChange={handleLogChange} />
+        <DailyLogForm dailyLog={dailyLog} onLogChange={handleLogChange} />
       </div>
     </div>
   );

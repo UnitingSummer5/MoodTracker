@@ -8,7 +8,7 @@ const moods = [
 
 const MoodSelector: React.FC<IMoodSelector> = ({ selectedMood, onMoodChange }) => {
     return (
-        <div className="flex justify-around mb-4 animate__animated animate__fadeIn">
+        <div className="flex justify-around mb-4">
             {moods.map((mood) => (
                 <button
                     key={mood.label}
