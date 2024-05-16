@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { IMoodSelector } from "./types";
 
 const moods = [
@@ -6,9 +7,16 @@ const moods = [
     { label: 'Sad', icon: '😢' },
 ];
 
-const MoodSelector: React.FC<IMoodSelector> = ({ selectedMood, onMoodChange }) => {
+const MoodSelector: React.FC<IMoodSelector> = ({ selectedMood, onMoodChange, animate, setAnimate }) => {
+    useEffect(() => {
+        if (animate) {
+            const timer = setTimeout(() => setAnimate(false), 1000);
+            return () => clearTimeout(timer);
+        }
+    }, [animate, setAnimate])
+
     return (
-        <div className="flex justify-around mb-4 animate__animated animate__fadeIn">
+        <div className={`flex justify-around mb-4 ${animate ? 'animate__animated animate__fadeIn' : ''}`}>
             {moods.map((mood) => (
                 <button
                     key={mood.label}

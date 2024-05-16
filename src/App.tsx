@@ -64,9 +64,23 @@ function App() {
     <div className='min-h-screen bg-gray-100 p-4 flex flex-col items-center'>
       <h1 className='text-3xl font-bold text-center mb-4'>Mood Tracker</h1>
       <div className='w-full max-w-md'>
-        <CalendarComponent selectedDate={selectedDate} onDateChange={handleDateChange} moodData={moodData} />
-        <MoodSelector selectedMood={mood} onMoodChange={handleMoodChange} />
-        <DailyLogForm key={selectedDate?.toDateString()} dailyLog={dailyLog} onLogChange={handleLogChange} />
+        <CalendarComponent
+          selectedDate={selectedDate}
+          onDateChange={handleDateChange}
+          moodData={moodData}
+        />
+        <MoodSelector
+          selectedMood={mood}
+          onMoodChange={handleMoodChange}
+          animate={animate}
+          setAnimate={setAnimate}
+        />
+        <DailyLogForm
+          dailyLog={dailyLog}
+          onLogChange={handleLogChange}
+          animate={animate}
+          setAnimate={setAnimate}
+        />
       </div>
     </div>
   );
