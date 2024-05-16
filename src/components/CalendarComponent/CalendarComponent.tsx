@@ -1,5 +1,5 @@
 import Calendar, { CalendarProps } from "react-calendar";
-import { isToday } from "date-fns";
+import { isToday, startOfTomorrow } from "date-fns";
 import 'react-calendar/dist/Calendar.css';
 import { ICalendarComponent } from "./types";
 
@@ -28,9 +28,13 @@ const CalendarComponent: React.FC<ICalendarComponent> = ({ selectedDate, onDateC
         return '';
     };
 
+    const tileDisabled = ({ date, view }: { date: Date, view: string }) => {
+        return view === 'month' && date > new Date();
+      };
+
     return (
         <div className="flex mb-4 justify-center">
-            <Calendar value={selectedDate} onChange={onDateChange as CalendarProps['onChange']} tileClassName={getTileClassName}/>
+            <Calendar value={selectedDate} onChange={onDateChange as CalendarProps['onChange']} tileClassName={getTileClassName} tileDisabled={tileDisabled}/>
         </div>
     );
 };
