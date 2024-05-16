@@ -16,9 +16,14 @@ function App() {
 
   useEffect(() => {
     const storedData = localStorage.getItem('moodData');
-    if (storedData) {
-      setMoodData(JSON.parse(storedData));
+    const initialMoodData = storedData ? JSON.parse(storedData) : {};
+
+    const today = new Date().toDateString();
+    if (!initialMoodData[today]) {
+      initialMoodData[today] = { mood: '', dailyLog: '' };
     }
+
+    setMoodData(initialMoodData);
   }, []);
 
   useEffect(() => {

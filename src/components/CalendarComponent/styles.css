@@ -10,6 +10,10 @@
     @apply bg-blue-200 !important;
 }
 
+.react-calendar .todayTile {
+    @apply bg-yellow-200 !important;
+}
+
 .react-calendar__tile--active {
     background-color: inherit;
     border: 2px solid black;

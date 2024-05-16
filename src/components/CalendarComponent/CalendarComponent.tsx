@@ -12,7 +12,7 @@ const CalendarComponent: React.FC<ICalendarComponent> = ({ selectedDate, onDateC
 
         if (dataForDate) {
             if (isToday(dateKey)) {
-                return '';
+                return 'todayTile';
             }
             switch (dataForDate.mood) {
                 case 'Happy':
