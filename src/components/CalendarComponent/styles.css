@@ -1,0 +1,11 @@
+.react-calendar .happyTile {
+    @apply bg-green-200
+}
+
+.react-calendar .neutralTile {
+    @apply bg-gray-200
+}
+
+.react-calendar .sadTile {
+    @apply bg-blue-200
+}

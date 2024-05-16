@@ -8,11 +8,11 @@ const moods = [
 
 const MoodSelector: React.FC<IMoodSelector> = ({ selectedMood, onMoodChange }) => {
     return (
-        <div className="flex justify-around mb-4">
+        <div className="flex justify-around mb-4 animate__animated animate__fadeIn">
             {moods.map((mood) => (
                 <button
                     key={mood.label}
-                    className={`text-4xl ${selectedMood === mood.label ? 'text-blue-500' : 'text-gray-500'}`}
+                    className={`text-4xl ${selectedMood === mood.label ? 'scale-150' : 'scale-100 opacity-50'}`}
                     onClick={() => onMoodChange(mood.label)}
                 >
                     {mood.icon}
