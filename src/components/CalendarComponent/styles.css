@@ -1,11 +1,23 @@
 .react-calendar .happyTile {
-    @apply bg-green-200
+    @apply bg-green-200 !important;
 }
 
 .react-calendar .neutralTile {
-    @apply bg-gray-200
+    @apply bg-gray-200 !important;
 }
 
 .react-calendar .sadTile {
-    @apply bg-blue-200
+    @apply bg-blue-200 !important;
+}
+
+.react-calendar__tile--active {
+    background-color: inherit;
+    border: 2px solid black;
+    color: inherit;
+}
+
+.react-calendar__tile--active:enabled:hover,
+.react-calendar__tile--active:enabled:focus {
+    background-color: inherit;
+    border: 2px solid black;
 }

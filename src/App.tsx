@@ -8,7 +8,6 @@ interface MoodData {
   }
 }
 
-
 function App() {
   const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
   const [mood, setMood] = useState<string>('');
@@ -60,7 +59,7 @@ function App() {
 
   return (
     <div className='min-h-screen bg-gray-100 p-4 flex flex-col items-center'>
-      <h1 className='text-3xl font-bold text-center mb-4'>Mood Tracker</h1>
+      <h1 className='text-3xl font-bold text-center mb-4'>¿Comó te sientes mi amor?</h1>
       <div className='w-full max-w-md'>
         <CalendarComponent selectedDate={selectedDate} onDateChange={handleDateChange} moodData={moodData} />
         <MoodSelector selectedMood={mood} onMoodChange={handleMoodChange} />

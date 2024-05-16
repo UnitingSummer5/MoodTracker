@@ -12,7 +12,9 @@ const MoodSelector: React.FC<IMoodSelector> = ({ selectedMood, onMoodChange }) =
             {moods.map((mood) => (
                 <button
                     key={mood.label}
-                    className={`text-4xl ${selectedMood === mood.label ? 'scale-150' : 'scale-100 opacity-50'}`}
+                    className={`text-4xl transition-transform duration-300 ease-in-out ${
+                        selectedMood === mood.label ? 'scale-150 opacity-100' : 'scale-100 opacity-50'
+                    }`}
                     onClick={() => onMoodChange(mood.label)}
                 >
                     {mood.icon}
